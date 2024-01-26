@@ -1,5 +1,7 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
+# .gitignore
 
-.idea
-Scripts/
+# Ignore JetBrains IDE .idea directory
+.idea/
+
+# Ignore other unnecessary files
+
