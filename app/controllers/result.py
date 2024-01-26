@@ -15,7 +15,7 @@ results_model = rm.results_model()
 
 @api.route('/')
 class Results(Resource):
-    @api.response(200, "Past results successfully fetched!")
+    @api.response(200, "Past results successfully fetched!", results_model)
     @api.response(400, "Invalid input data!")
     @authenticate_user
     def get(self):

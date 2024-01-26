@@ -1,0 +1,28 @@
+version: "3.3"
+services:
+  db:
+    image: mongo:5.0.20-focal
+    container_name: db-container
+    ports:
+       - "27017:27017"
+    volumes:
+       - mongodata:/data/db
+    network_mode: "host"
+    restart: unless-stopped
+
+  server:
+    build: .
+    image: dmc/webserver
+    container_name: server-container
+    volumes:
+      - .:/backend
+    depends_on:
+      - db
+    ports:
+      - "5001:5001"
+    network_mode: "host"
+    restart: unless-stopped
+
+volumes:
+  mongodata:
+    driver: local
