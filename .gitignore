@@ -1,7 +1,5 @@
-# .gitignore
-
-# Ignore JetBrains IDE .idea directory
 .idea/
 
-# Ignore other unnecessary files
-
+app/.idea
+.idea
+Scripts/
